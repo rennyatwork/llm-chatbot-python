@@ -3,3 +3,5 @@ openai
 langchain_openai
 neo4j-driver
 streamlit
+
+packaging<24.0,>=23.2
