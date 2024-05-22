@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import write_message
+from agent import generate_response
 
 # tag::setup[]
 # Page Config
@@ -24,12 +25,14 @@ def handle_submit(message):
     context using data from Neo4j.
     """
 
-    # Handle the response
+    ## Handle the response
     with st.spinner('Thinking...'):
         # # TODO: Replace this with a call to your LLM
+        response = generate_response(message)
         from time import sleep
         sleep(1)
-        write_message('assistant', message)
+        #write_message('assistant', message)
+        write_message('assistant', response)
 # end::submit[]
 
 
